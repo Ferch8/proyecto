@@ -1,0 +1,89 @@
+   
+  <div class="row" >
+    <div id="cambio" class="col-sm-3 well">
+      <div class="well" align="center">
+        <p><a href="/profile">Mi perfil</a></p>
+        <img src="https://image.flaticon.com/icons/png/128/149/149071.png" class="img-circle" height="65" width="65" alt="Avatar">
+      </div>
+      <div class="well">
+        <p><a href="#">Intereses</a></p>
+        <p>
+          <span class="label label-default">News</span>
+          <span class="label label-primary">Soccer</span>
+          <span class="label label-success">Media</span>
+          <span class="label label-info">Football</span>
+          <span class="label label-warning">Gaming</span>
+          <span class="label label-danger">Friends</span>
+        </p>
+      </div>
+      <div class="alert alert-success fade in">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+        <p><strong>Ey!</strong></p>
+        Te damos la bienvenida a tw gt
+      </div>
+      
+    </div>
+    
+    <div class="col-sm-7">
+  
+      <div class="row">
+        <div id="cambio" class="col-sm-12">
+          <div class="panel panel-default text-left">
+            <div class="panel-body">
+                <form ng-submit="publi.regPubli(regData);">
+                  <label>Username</label>
+                  <input class="form-control" type="text" name="username" ng-model="publi.regData.username = main.username"  disabled=false>
+                  <br>
+                  <label>Descripcion</label>
+                  <input class="form-control" type="text" name="descripcion" placeholder="¿ Que estas pensando ?" ng-model="publi.regData.descripcion" >
+                  <br>
+                  <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-send"></span> Tweet</button>
+                </form>    
+            </div>
+          </div>
+        </div>
+      </div>
+      <div ng-init="getPublicaciones()">
+      <div class="row"  ng-repeat="publicacion in publicaciones">
+        <div id="cambio" class="col-sm-3">
+          <div class="well" align="center">
+           <p><b>{{publicacion.username}}</b></p>
+           <span class="glyphicon glyphicon-user"></span>
+          </div>
+        </div>
+        <div id="cambio" class="col-sm-9">
+         	<div class="well" >
+	            <p>{{publicacion.username}}</p>
+	            <p>{{publicacion.descripcion}}</p>
+	            <p>{{publicacion.fecha}}</p>
+	            <a href="/publicaciones/{{publicacion._id}}/show" class="btn btn-info"><span class="glyphicon glyphicon-eye-open"></span></a>
+		    	     <a href="/publicaciones/{{publicacion._id}}/edit" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span></a>
+		    	     <a ng-click="deletePublicacion(publicacion._id)" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
+        	</div>
+        </div>
+      </div>
+      </div>
+        
+    </div>
+
+    <div id="cambio" class="col-sm-2 well">
+      <div class="thumbnail">
+        <p align="center"><strong>!Aprende a programar¡</strong></p>
+        <a target="_blank" href="https://platzi.com/cursos/">
+          <img src="https://ez.no/var/ezflow_site/storage/images/media/images/web-developer-experience/525242-2-eng-GB/Web-Developer-Experience_large.png" width="400" height="300">
+        </a>
+      </div>     
+      <div class="thumbnail">
+        <a target="_blank" href="https://radiomitre.cienradios.com/">
+          <img src="https://media.giphy.com/media/r7qnLuiI2t5UA/giphy.gif" width="400" height="300">
+        </a>
+      </div>
+      <div class="thumbnail">
+        <a target="_blank" href="http://www.titanbet.es/">
+          <img src="https://media.giphy.com/media/uyjhGpNceoN7G/giphy.gif" width="400" height="300">
+        </a>
+      </div> 
+      
+      </div>
+    </div>
+  </div>

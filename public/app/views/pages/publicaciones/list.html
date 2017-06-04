@@ -1,0 +1,39 @@
+	<div class="panel panel-primary" ng-init="getPublicaciones()">
+	<div class="panel-heading">
+		<p class="panel-title"><span style="color:#5bc0de;" class="glyphicon glyphicon-list"></span>  Lista de Publicaciones</p>
+	</div>
+	<br>
+<div class="row">
+	<div class="col-xs-12 col-sm-8" > 
+	<div class="input-group input-group-lg">
+		<input type="text" class="form-control" ng-model="searchText">
+		<span class="input-group-btn">
+			<button class="btn btn-default" type="button"><i class="glyphicon glyphicon-user"></i> Buscar</button>
+		</span>
+	</div>
+	</div>
+</div>
+<br>
+	<div class="panel-body" >
+		<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Nombre</th>
+				<th>Desc</th>
+				<th>Fecha</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="publicacion in publicaciones | filter: searchText">
+				<td>{{publicacion.username}}</td>
+				<td>{{publicacion.descripcion}}</td>
+				<td>{{publicacion.fecha}}</td>
+				<td> 
+					<a href="/publicaciones/{{publicacion._id}}/show" class="btn btn-info"><span class="glyphicon glyphicon-align-justify"></span> Show</a>
+					<a href="/publicaciones/{{publicacion._id}}/edit" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+					<a ng-click="deletePublicacion(publicacion._id)" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+				</td>
+			</tr>
+		</tbody>
+		</table>
+	</div>

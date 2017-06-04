@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="/">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+   <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style2.css">
+     <!-- Main Angular Files -->
+    <script src="assets/js/angular.js"></script>
+    <script src="assets/js/angular-route.js"></script>
+    <script src="assets/js/angular-animate.js"></script>
+
+    <!-- Angular Config/Routes -->
+    <script src="app/app.js"></script>
+    <script src="app/routes.js"></script>
+
+    <!-- Angular Controllers -->
+    <script src="app/controllers/userCtrl.js"></script>
+    <script src="app/controllers/mainCtrl.js"></script>
+    <script src="app/controllers/publicacionesCtrl.js"></script>
+
+    <!-- Angular Services -->
+    <script src="app/services/userServices.js"></script>
+    <script src="app/services/authServices.js"></script>
+
+    <title>CHISME GT</title>
+
+  <style>  
+
+   
+    body {
+      background-color: #50a3a2;
+    }  
+
+
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+
+
+  </style>
+</head>
+
+<body ng-app="userApp" ng-controller="mainCtrl as main" ng-show="main.loadme" ng-cloak>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Twitter</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a ng-show="main.isLoggedIn" href="/main">Home</a></li>
+        <li ><a ng-show="main.isLoggedIn" href="/finduser">Search</a></li>
+   <!--     <li><a ng-show="!main.isLoggedIn" href="/login">Login</a></li>
+        <li><a ng-show="!main.isLoggedIn" href="/register">Register</a></li>
+        <li><a ng-show="main.isLoggedIn" href="#" ng-click="main.logout();">Logout</a></li> -->
+      </ul>
+ <!--     <form class="navbar-form navbar-right" role="search">
+        <div class="form-group input-group">
+          <input type="text" class="form-control" placeholder="Search..">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">
+              <span class="glyphicon glyphicon-search"></span>
+            </button>
+          </span>        
+        </div>
+      </form> -->
+      <ul class="nav navbar-nav navbar-right">
+      <li><a ng-show="!main.isLoggedIn" href="/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a ng-show="!main.isLoggedIn" href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+       <li><a ng-show="main.isLoggedIn" href="/profile"> <span class="glyphicon glyphicon-user"></span> Hello {{main.username}}</a></li>
+       <li><a ng-show="main.isLoggedIn" href="#" ng-click="main.logout();"> <span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br>
+<br>
+
+<div class="container "> 
+  <div ng-view></div>
+</div>  
+
+
+
+<footer class="container-fluid text-center">
+  <p>Glib Twitter</p>
+</footer>
+
+<script src="assets/js/jquery-3.1.1.min.js"></script>
+<!--<script src="assets/js/bootstrap.js"></script>-->
+</body>
+</html>

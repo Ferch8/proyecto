@@ -1,0 +1,67 @@
+<div class="page-header">
+	<h2>{{ main.username }}'s profile</h2>
+</div>
+
+<div id="cont">
+	<br>
+	<form ng-submit="seg.getSeguidos(regData);">
+		<input class="form-control" type="hidden" name="username" ng-model="seg.regData.username = main.username" value="{{main.username}}" disabled=false>
+		<button id="boton"  type="submit"></button>
+	</form>
+	<br>
+	<form ng-submit="seg.getSeguidores(regData);">
+		<input class="form-control" type="hidden" name="username" ng-model="seg.regData.username = main.username" value="{{main.username}}" disabled=false>
+		<button id="botonn"  type="submit"></button>
+	</form>
+	<br>
+</div>
+
+<div  align="center">
+    <img src="https://cdn3.iconfinder.com/data/icons/users-6/100/men-computer-1-512.png" class="img-circle" height="100" width="100" alt="Avatar">
+</div>
+<br>
+<div class="panel panel-info">
+	<div class="panel-heading" style="text-align: center;"> <strong>User Profile</strong></div>
+
+	<table class="table">
+	<tr>
+		<td><strong>Username </strong></td>
+		<td><strong>Email </strong></td>
+		<td><strong>Seguidos </strong></td>
+		<td><strong>Seguidores </strong></td>
+	</tr>
+	<tr>
+		<td>{{ main.username }}</td>
+		<td>{{ main.useremail }}</td>
+		<td>{{ seg.seguidos}}</td>
+		<td>{{ seg.seguidores}}</td>
+	</tr>
+</table>
+
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!-- <div class="row show-hide-message" >
+	<div class="alert alert-success">{{seg.seguidos}}</div>
+</div>
+-->
+<script type="text/javascript">
+$(document).ready(function() {
+    setTimeout(function() {
+        $("#boton").click();
+        $("#botonn").click();
+        $('#cont').hide();
+    },100);
+});
+</script>
+

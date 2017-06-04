@@ -1,0 +1,52 @@
+
+<body class="bo">
+
+
+<div class="wrapper" ng-cloak>
+
+<div class="containerr f">
+
+  <h1>CHISME GT</h1>
+<form  ng-submit="main.doLogin(loginData);">
+
+	<input  type="text" name="username" placeholder="Username" ng-model="main.loginData.username">
+	<br>
+
+	<input type="password" name="password" placeholder="Password" ng-model="main.loginData.password">
+	<br>
+	<button type="submit" id="login-button"><span>Login </span></button>
+</form>
+</div>
+<br>
+
+<div class="jumbotron text-center" ng-show="main.loading">
+	<span class="glyphicon glyphicon-repeat spinner"></span>
+	<p>Loading...</p>
+</div>
+
+<br>
+
+<div class="row show-hide-message" ng-show="main.successMsg">
+	<div class="alert alert-success colorr">Usuario Autenticado </div>
+</div>
+
+<br>
+
+<div class="row show-hide-message" ng-show="main.errorMsg">
+	<div class="alert alert-danger colorr">No se pudo autenticar</div>
+</div>
+
+<ul class="bg-bubbles">
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
+</div>
+</body>

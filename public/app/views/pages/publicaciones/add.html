@@ -1,0 +1,19 @@
+
+<div class="page-header">
+	<h1>Add tweet</h1>
+</div>
+
+<form ng-submit="publi.regPubli(regData);">
+	<label>Username</label>
+	<input class="form-control" type="text" name="email" placeholder="Ingrese username" ng-model="publi.regData.username">
+	<br>
+	<label>Descripcion</label>
+	<input class="form-control" type="text" name="username" placeholder="Ingrese tweet" ng-model="publi.regData.descripcion" >
+	<br>
+	<label>Fecha</label>
+	<input class="form-control" type="text" name="password" placeholder="Ingrese fecha" ng-model="publi.regData.fecha" >
+	<br>
+	<button class="btn btn-primary" type="submit">Add</button>
+</form>
+
+

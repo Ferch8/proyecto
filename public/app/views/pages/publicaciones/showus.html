@@ -1,0 +1,39 @@
+<div class="panel panel-primary" ng-init="getUsers()">
+	<div class="panel-heading">
+		<p class="panel-title"><span style="color:#5bc0de;" class="glyphicon glyphicon-list"></span>  Lista de Usuarios</p>
+	</div>
+	<br>
+<div class="row">
+	<div class="col-xs-12 col-sm-8" > 
+	<div class="input-group input-group-lg">
+		<input type="text" class="form-control" ng-model="searchText">
+		<span class="input-group-btn">
+			<button class="btn btn-default" type="button"><i class="glyphicon glyphicon-user"></i> Buscar</button>
+		</span>
+	</div>
+	</div>
+</div>
+<br>
+	<div class="panel-body" >
+		<table class="table table-striped">
+		<thead>
+			<tr>
+				<th><b>Username</b></th>
+				<th><b>Email</b></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="user in users | filter: searchText">
+				<td>{{user.username}}</td>
+				<td>{{user.email}}</td>
+				<td>
+					<form ng-submit="find.regSeguidor(regData);">
+						<input type="hidden" name="username" ng-model="find.regData.username = main.username" value="{{main.username}}">
+						<input type="hidden" name="seguidor" ng-model="find.regData.seguidor = user.username" value="{{user.username}}">
+						<button class="btn btn-info"> Follow</button>
+					</form>
+				</td>
+			</tr>
+		</tbody>
+		</table>
+	</div>

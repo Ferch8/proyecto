@@ -1,0 +1,56 @@
+<body class="bo">
+
+
+
+<div class="wrapper" ng-cloak>
+
+<div class="containerr f">
+
+<h1>REGÍSTRATE</h1>
+
+<form ng-submit="register.regUser(regData);">
+
+	<input type="text" name="email" placeholder="E-mail" ng-model="register.regData.email">
+	<br>
+
+	<input  type="text" name="username" placeholder="Username" ng-model="register.regData.username">
+	<br>
+
+	<input  type="password" name="password" placeholder="Password" ng-model="register.regData.password">
+	<br>
+	<button type="submit">Register</button>
+</form>
+</div>
+<br>
+
+<div class="jumbotron text-center" ng-show="register.loading">
+	<span class="glyphicon glyphicon-repeat spinner"></span>
+	<p>Loading...</p>
+</div>
+
+<br>
+
+<div class="row show-hide-message" ng-show="register.successMsg">
+	<div class="alert alert-success">{{ register.successMsg}}</div>
+</div>
+
+<br>
+
+<div class="row show-hide-message" ng-show="register.errorMsg">
+	<div class="alert alert-danger">{{ register.errorMsg}}</div>
+</div>
+
+<ul class="bg-bubbles">
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
+</div>
+</body>
